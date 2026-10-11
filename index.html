@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusinessCard_Bacunlay</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-glow" id="ambient-glow"></div>
+
+  <div class="ai-companion-container" id="ai-companion" title="Click to interact with AI">
+    <div class="ai-avatar-node">
+      <div class="ai-core-ring"></div>
+      <div class="ai-core-glow"></div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2a10 10 0 0 1 7.54 16.6l1.46 1.46-1.42 1.42-1.46-1.46A10 10 0 1 1 12 2z"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+    </div>
+    <div class="ai-speech-bubble" id="ai-speech">
+      <span>AGRIVERSE AI: Ready to assist! Click me to talk.</span>
+    </div>
+  </div>
+
+  <div class="scene" id="scene">
+    <div class="card-4d" id="card">
+      
+      <article class="business-card-face card-front">
+        <div class="hologram-overlay"></div>
+        <div class="scanline"></div>
+        <div class="point-light-overlay" id="point-light-front"></div>
+        <div class="specular-sheen"></div>
+
+        <div class="card-brand pop-layer-deep">
+          <div class="brand-logo-container">
+            <div class="brand-icon glowing-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+          </div>
+          <div class="brand-text">
+            <h3 class="brand-name">AGRIVERSE</h3>
+            <p class="brand-tagline">FARMING FOR THE FUTURE</p>
+          </div>
+        </div>
+
+        <div class="profile-section pop-layer-mid">
+          <div class="avatar-frame">
+            <img src="BusinessCard_Bacunlay/assets/images/profile.jpg" alt="Floyd M. Bacunlay" class="profile-photo" onerror="this.src='https://via.placeholder.com/80/020704/05df72?text=FB';">
+          </div>
+          <div class="profile-text">
+            <h4 class="person-name">Floyd M. Bacunlay</h4>
+            <p class="person-role">Agricultural Innovation Lead</p>
+          </div>
+        </div>
+
+        <div class="card-contact pop-layer-high">
+          <div class="contact-item">
+            <svg class="fallback-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>floydbacunlay@agriverse.com</span>
+          </div>
+          <div class="contact-item">
+            <svg class="fallback-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+63 9979131072</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="business-card-face card-back">
+        <div class="hologram-overlay"></div>
+        <div class="scanline"></div>
+        <div class="point-light-overlay" id="point-light-back"></div>
+        <div class="specular-sheen"></div>
+
+        <div class="card-header-row pop-layer-deep">
+          <h3 class="brand-name">AGRIVERSE SERVICES</h3>
+        </div>
+
+        <div class="card-services-layout">
+          <div class="card-services pop-layer-mid">
+            <ul class="services-list">
+              <li><span class="hud-bullet"></span>Transforming agricultural through technology</li>
+              <li><span class="hud-bullet"></span>Smart farming solutions</li>
+              <li><span class="hud-bullet"></span>Sustainable crop management</li>
+              <li><span class="hud-bullet"></span>Neural farm grid networks</li>
+            </ul>
+          </div>
+
+          <div class="qr-container pop-layer-high">
+            <svg class="qr-code-svg" viewBox="0 0 29 29" shape-rendering="crispEdges">
+              <path fill="currentColor" d="M0 0h7v7H0zM22 0h7v7h-7zM0 22h7v7H0zM10 0h2v1h2v1h-1v1h-1v1h1v1h1v2h-2v1h-2v-2h1v-1h-2V0zM15 0h2v1h1v2h-1v2h-1V3h-1V1h1zM19 0h2v1h-1v1h1v2h-2V1h1zM8 8h1v2H8zM11 8h1v1h-1zM13 8h1v1h-1zM18 8h1v2h1v1h-2V8zM21 8h1v1h-1zM0 8h1v1h1v1H0zM3 8h2v1H3zM6 8h1v1H6zM1 11h2v1H1zM4 11h2v1H4zM8 11h1v2H8zM10 11h1v2h-1zM13 11h2v2h-2zM16 11h1v1h-1zM24 11h1v1h-1zM26 11h2v1h-2zM28 12h1v1h-1zM0 13h1v2h-1zM2 13h1v1h-1zM6 13h1v1h-1zM9 14h1v1h1v1h-2zM12 14h1v1h-1zM14 14h1v1h-1zM18 14h1v2h-1zM20 14h1v2h-1zM22 14h1v1h-1zM25 14h1v1h-1zM28 14h1v1h-1zM1 16h2v1H1zM4 16h2v1H4zM10 16h1v1h1v1h-2zM13 16h1v1h-1zM16 16h2v1h-1v1h-1zM23 16h1v1h-1zM26 16h2v1h-2zM28 16h1v1h-1zM8 18h1v2H8zM11 18h1v1h-1zM13 18h1v1h-1zM18 18h1v2h1v1h-2V18zM21 18h1v1h-1zM0 18h1v1h1v1H0zM3 18h2v1H3zM6 18h1v1H6zM1 21h2v1H1zM4 21h2v1H4zM8 21h1v2H8zM10 21h1v2h-1zM13 21h2v2h-2zM16 21h1v1h-1zM24 21h1v1h-1zM26 21h2v1h-2zM1 1h5v5H1zM23 1h5v5h-5zM1 23h5v5H1zM11 25h1v1h-1zM14 25h1v1h-1zM19 25h2v2h-1v1h-2v-2h1z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-footer-banner pop-layer-high">
+          <div class="contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <span>www.agriverse.com</span>
+          </div>
+          <div class="social-links-footer">
+            <div class="footer-social-icons">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2a5 5 0 0 0 5 5"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <span>FOR BUSINESS</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+    const scene = document.getElementById('scene');
+    const lightFront = document.getElementById('point-light-front');
+    const lightBack = document.getElementById('point-light-back');
+    const ambientGlow = document.getElementById('ambient-glow');
+
+    let mouseX = 0, mouseY = 0;
+    let targetMouseX = 0, targetMouseY = 0;
+    let targetRotateX = 0, targetRotateY = 0;
+    let currentRotateX = 0, currentRotateY = 0;
+    let targetFlipY = 0;
+    let currentFlipY = 0;
+    let isFlipped = false;
+    let time = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = scene.getBoundingClientRect();
+      const cardCenterX = rect.left + rect.width / 2;
+      const cardCenterY = rect.top + rect.height / 2;
+
+      targetMouseX = (e.clientX - cardCenterX) / (window.innerWidth / 2);
+      targetMouseY = (e.clientY - cardCenterY) / (window.innerHeight / 2);
+
+      targetRotateX = -targetMouseY * 20;
+      targetRotateY = targetMouseX * 20;
+    });
+
+    card.addEventListener('click', () => {
+      isFlipped = !isFlipped;
+      targetFlipY = isFlipped ? 180 : 0;
+    });
+
+    window.addEventListener('deviceorientation', (e) => {
+      if (e.beta && e.gamma) {
+        targetRotateX = (e.beta - 45) * 0.4;
+        targetRotateY = e.gamma * 0.4;
+      }
+    });
+
+    function renderLoop() {
+      time += 0.020;
+
+      mouseX += (targetMouseX - mouseX) * 0.08;
+      mouseY += (targetMouseY - mouseY) * 0.08;
+
+      const waveX = Math.sin(time * 1.0) * 1.5;
+      const waveY = Math.cos(time * 0.8) * 1.5;
+
+      currentRotateX += (targetRotateX + waveX - currentRotateX) * 0.06;
+      currentRotateY += (targetRotateY + waveY - currentRotateY) * 0.06;
+      currentFlipY += (targetFlipY - currentFlipY) * 0.08;
+
+      card.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY + currentFlipY}deg)`;
+
+      const lightX = 50 + (mouseX * 40);
+      const lightY = 50 + (mouseY * 40);
+      const lightIntensity = Math.min(Math.abs(mouseX) + Math.abs(mouseY) + 0.3, 0.85);
+
+      lightFront.style.background = `radial-gradient(circle at ${lightX}% ${lightY}%, rgba(123, 241, 168, 0.45) 0%, rgba(5, 223, 114, 0.05) 55%, transparent 80%)`;
+      lightFront.style.opacity = lightIntensity;
+
+      lightBack.style.background = `radial-gradient(circle at ${100 - lightX}% ${lightY}%, rgba(5, 223, 114, 0.4) 0%, rgba(123, 241, 168, 0.05) 55%, transparent 80%)`;
+      lightBack.style.opacity = lightIntensity;
+
+      const glowX = 50 + (mouseX * 25);
+      const glowY = 50 + (mouseY * 25);
+      ambientGlow.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(5, 223, 114, 0.35) 0%, rgba(2, 7, 4, 0) 70%)`;
+
+      requestAnimationFrame(renderLoop);
+    }
+    renderLoop();
+
+    const aiCompanion = document.getElementById('ai-companion');
+    const aiSpeech = document.getElementById('ai-speech');
+    
+    let aiX = window.innerWidth - 180;
+    let aiY = 120;
+    let targetAiX = aiX;
+    let targetAiY = aiY;
+
+    let currentUtterance = null;
+    
+    const aiPhrases = [
+      "This is version 2.0 of version 1.0 reference.",
+      "Just move the cursor to tilt or Click the card to flip",
+      "Neural farm grids reporting optimal moisture and nutrient balance across sectors.",
+      "Did you know automated IoT drone sensors can reduce agricultural water waste by up to 35%?",
+      "Synchronizing regional climate parameters... Next-generation green infrastructure is online.",
+      "Welcome to the Agriverse ecosystem. Tap the card anytime to explore our core services.",
+      "Analyzing soil nutrition matrices... All automated cultivation systems are nominal.",
+      "Bridging the gap between high-tech digital intelligence and sustainable food production.",
+      "Looking for smart farming solutions or collaboration? Let's connect and build a greener future."
+    ];
+
+    setInterval(() => {
+      targetAiX = Math.random() * (window.innerWidth - 240) + 40;
+      targetAiY = Math.random() * (window.innerHeight - 240) + 40;
+    }, 5500);
+
+    function updateAI() {
+      aiX += (targetAiX - aiX) * 0.03;
+      aiY += (targetAiY - aiY) * 0.03;
+      aiCompanion.style.transform = `translate(${aiX}px, ${aiY}px)`;
+      requestAnimationFrame(updateAI);
+    }
+    updateAI();
+
+    function triggerAISpeech() {
+      const randomPhrase = aiPhrases[Math.floor(Math.random() * aiPhrases.length)];
+      aiSpeech.querySelector('span').innerText = randomPhrase;
+      aiSpeech.style.opacity = '1';
+      
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        
+        currentUtterance = new SpeechSynthesisUtterance(randomPhrase);
+        currentUtterance.pitch = 1.1;
+        currentUtterance.rate = 1.0;
+
+        const voices = window.speechSynthesis.getVoices();
+
+        if (navigator.onLine) {
+          const cloudVoice = voices.find(v => !v.localService) || voices[0];
+          if (cloudVoice) {
+            currentUtterance.voice = cloudVoice;
+          }
+        } else {
+          const localVoice = voices.find(v => v.localService === true) || voices[0];
+          if (localVoice) {
+            currentUtterance.voice = localVoice;
+          }
+        }
+
+        window.speechSynthesis.speak(currentUtterance);
+      }
+
+      setTimeout(() => {
+        aiSpeech.style.opacity = '0.85';
+      }, 4000);
+
+      scheduleNextAutoSpeech();
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    function scheduleNextAutoSpeech() {
+      const possibleIntervalsSeconds = [10, 20];
+      const randomSeconds = possibleIntervalsSeconds[Math.floor(Math.random() * possibleIntervalsSeconds.length)];
+      const intervalMs = randomSeconds * 1000;
+      
+      setTimeout(triggerAISpeech, intervalMs);
+    }
+
+    aiCompanion.addEventListener('click', triggerAISpeech);
+
+    setTimeout(scheduleNextAutoSpeech, 5000);
+
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle4D {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.z = Math.random() * 3 + 0.5;
+        this.size = this.z * 0.75;
+        this.speedX = (Math.random() - 0.5) * 0.2;
+        this.speedY = (Math.random() - 0.5) * 0.2;
+        this.alpha = Math.random() * 0.5 + 0.2;
+      }
+      update() {
+        this.x += this.speedX + (mouseX * this.z * 0.25);
+        this.y += this.speedY + (mouseY * this.z * 0.25);
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+      draw() {
+        ctx.fillStyle = `rgba(123, 241, 168, ${this.alpha * (this.z / 3.5)})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 85; i++) particles.push(new Particle4D());
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
